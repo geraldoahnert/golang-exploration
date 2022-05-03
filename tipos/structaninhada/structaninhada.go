@@ -25,8 +25,8 @@ func main() {
 	pedido := pedido{
 		userID: 1,
 		itens: []item{
-			item{1, 2, 12.10},
-			item{2, 1, 23.49},
+			{produtoID: 1, qtd: 2, preco: 12.10},
+			{produtoID: 2, qtd: 1, preco: 23.49},
 		},
 	}
 	fmt.Println(pedido.valorTotal())
