@@ -17,7 +17,8 @@ func titulo(urls ...string) <-chan string {
 			resp, _ := http.Get(url)
 			html, _ := ioutil.ReadAll(resp.Body)
 
-			r, _ := regexp.Compile("<title>(.*?)<\\/title>")
+			// log.Println(string(html))
+			r, _ := regexp.Compile(`<title.*>(.*?)</title>`)
 			c <- r.FindStringSubmatch(string(html))[1]
 		}(url)
 	}
